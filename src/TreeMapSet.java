@@ -13,10 +13,10 @@ import java.util.TreeMap;
  */
 public class TreeMapSet implements WordSet {
     
-    private TreeMap base;
+    private TreeMap<Word,Integer> base;
     
     public TreeMapSet(){
-        base = new TreeMap();
+        base = new TreeMap<Word,Integer>();
     }
 
     @Override
@@ -26,7 +26,12 @@ public class TreeMapSet implements WordSet {
 
     @Override
     public Word get(Word word) {
-        return (Word) base.get(word);
+        if (base.containsKey(word)){
+            base.remove(word);
+            return word;
+        }
+        else
+            return null;
     }
     
 }
