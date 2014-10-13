@@ -27,7 +27,7 @@ public class TreeMapSet implements WordSet {
     @Override
     public Word get(Word word) {
         if (base.containsKey(word)){
-            base.remove(word);
+            //base.remove(word);
             return word;
         }
         else
